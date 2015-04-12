@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %} - {{ page_title }} {% endblock %}
+
+{% block content %}
+
+	{% if albums %}
+       	<ul>
+        {% for album in albums %}
+            <li><a href="gallery/album/{{album.title}}">{{ album.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no albums.</p>
+    {% endif %}
+    
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %} - {{ page_title }} {% endblock %}
+
+{% block content %}
+
+	<h2>{{ album.title }}</h2>
+          
+          {% if images %}
+          
+    		<div id="original_photo" class="row">
+				<img id="detail" src="" />
+			</div>
+			
+		
+        {% load thumbnail %}
+        
+        
+       	<div class="row">
+        {% for image in images %}
+            
+            
+            {% thumbnail image.image "100x100" crop="center" as im %}
+            
+            			<div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }} alt="..." onclick="javascript:updateImage('{{image.image}}');">
+    </div>
+  </div>
+
+			{% endthumbnail %}
+            
+            
+            
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>There are no images.</p>
+    {% endif %}
+    
+          
+
+    
+{% endblock %}
