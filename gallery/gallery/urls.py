@@ -10,8 +10,13 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', include('picture.urls')),
+    url(r'^message/', include('message.urls')),
     url(r'^gallery/', include('picture.urls')),
     url(r'^admin/', include(admin.site.urls)),
+)
+
+urlpatterns += patterns('',
+    url(r'^captcha/', include('captcha.urls')),
 )
 
 if not settings.DEBUG:

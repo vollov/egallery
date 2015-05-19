@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'picture',
     'sorl.thumbnail',
+    'message',
+    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,4 +101,4 @@ TEMPLATE_DIRS = (
 
 MEDIA_URL = '/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/home/dustin/media/gallery'
+MEDIA_ROOT = '/home/skyler/media/gallery'
